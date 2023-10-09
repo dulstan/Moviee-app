@@ -1,0 +1,61 @@
+
+.trending-movies {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+
+/* Lägg till pseudoelement för att skapa en scrollbar om det behövs */
+.trending-movies::-webkit-scrollbar {
+    width: 8px;
+    /* Justera scrollbarbredden efter dina önskemål */
+}
+
+.trending-movies::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.trending-movies {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    /* Lägg till andra stilar efter behov */
+}
+.movie-card img{
+    width:200px; 
+    height: 200px
+}
+.movie-card {
+    flex: 0 0 auto;
+    width: 250px;
+    margin-right: 10px;
+    scroll-snap-align: start;
+    background-color: #fff;
+    /* Bakgrundsfärg för filmkortet */
+    border: 1px solid #ddd;
+    /* Kanteffekt för filmkortet */
+    border-radius: 5px;
+    /* Rundade hörn för filmkortet */
+    padding: 10px;
+    /* Inre utrymme för filmkortet */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Skugga för filmkortet */
+    /* Lägg till andra stilar efter behov */
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    
+}
+
+.movie-synopsis {
+    font-size: 1rem;
+ 
+}
+
+.fa-bookmark.bookmarked {
+    color: #ff0000; 
+  }
+  
