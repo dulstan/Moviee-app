@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'; // Importera useParams för att hämta genren från URL-parametern
 import allMovies from "../../../movies.json";
-import './ShowFilmByGenre.css'
+import './ShowfilmByGenre.css'
 import React from "react";
 
 function GenreMoviesPage() {
