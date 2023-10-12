@@ -9,5 +9,5 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/tests/setupTest.js'
   }, 
-  base: "/Movie-app/"
+  
 })
