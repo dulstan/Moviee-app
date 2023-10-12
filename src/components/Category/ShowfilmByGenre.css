@@ -1,26 +1,28 @@
-.genreMovies-container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+.genreMovies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
-img{
-    width: 200px;
-    height: 250px;
+
+img {
+  width: 200px;
+  height: 250px;
 }
+
 .movie-card {
-    flex: 0 0 calc(20% - 20px); /* Justera bredden beroende på antalet kolumner du vill ha per rad */
-    margin: 10px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    box-sizing: border-box;
-  }
-  
-  /* Rubrikstil */
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
+  flex: 0 0 calc(20% - 20px);
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+}
+
+.genre-movie h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}

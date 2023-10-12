@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import '../../../movies.json'
 import React from "react";
 import { Movie } from '../../modules/interfaces';
-
+import './FilmReview.css'
 
 function FilmReview() {
     const { movieTitle } = useParams<{ movieTitle: string }>();
@@ -49,16 +49,15 @@ function FilmReview() {
           localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks));
         }
       };
-      
-    
   return (
-    <div>
-      <h2>Film Review: {movie.title}</h2>
+    <div className='filmReview-container'>
+      <h2> {movie.title}</h2>
+      <article className='filmReview-card centered-card'>
       <img src={movie.thumbnail} alt={movie.title} />
       <p>Year: {movie.year}</p>
       <p>Rating: {movie.rating}</p>
       <p>Genre: {movie.genre}</p>
-      <p>Synopsis: {movie.synopsis}</p>
+      <p> {movie.synopsis}</p>
       <h3>Actors:</h3>
       <ul>
         {movie.actors.map((actor, index) => (
@@ -70,6 +69,8 @@ function FilmReview() {
   ) : (
     <button onClick={toggleBookmark}>Add to Bookmark</button>
   )}
+      </article>
+      
     </div>
   );
 }

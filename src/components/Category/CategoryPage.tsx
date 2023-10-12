@@ -1,13 +1,7 @@
 import { Link } from "react-router-dom";
 import allMovies from "../../../movies.json";
 import React from "react";
-// const uniqueCategories = Array.from(
-//   new Set(
-//     allMovies.map((movie) =>
-//       movie.genre.split(", ").map((genre) => genre.trim())
-//     )
-//   )
-// ).flat();
+import'./CategoryPage.css'
 
 function CategoryPage() {
   const allGenres = allMovies
@@ -16,12 +10,12 @@ function CategoryPage() {
   const uniqueGenres = [...new Set(allGenres)];
 
   return (
-    <div>
-      <h1>Välj en kategori</h1>
-      <ul>
+    <div className="category-selector">
+      <h1>Pick your category</h1>
+      <ul className="category-list">
         {uniqueGenres.map((genre, index) => (
-          <li key={index}>
-                        <Link to={`/category/${encodeURIComponent(genre)}`}>{genre}</Link>
+          <li key={index} className="category-item">
+                        <Link to={`/category/${encodeURIComponent(genre)}`} className="category-link">{genre} </Link>
 
           </li>
         ))}

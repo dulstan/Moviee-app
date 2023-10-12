@@ -12,8 +12,8 @@ function GenreMoviesPage() {
   const genreMovies = allMovies.filter((movie) => movie.genre.includes(genre));
 
   return (
-    <div>
-      <h1>Filmer i kategorin: {genre}</h1>
+    <div className='genre-movie'>
+      <h1>{genre}   Movies</h1>
       <div className='genreMovies-container'>
       
         {genreMovies.map((movie, index) => (
@@ -23,7 +23,6 @@ function GenreMoviesPage() {
 
             <h2>{movie.title}</h2>
             <p>År: {movie.year}</p>
-            {/* Visa övrig information om filmen */}
           </article>
         ))}
      

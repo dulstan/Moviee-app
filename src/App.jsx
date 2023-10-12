@@ -1,10 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from './components/Home/HomePage';
-import CategoryPage from './components/Category/CategoryPage'; // Importera kategorisidan
+import CategoryPage from './components/Category/CategoryPage'; 
 import GenreMoviesPage from "./components/Category/ShowFilmByGenre";
 import BookmarkedMovies from "./components/Bookmark/BookMark";
 import FilmReview from "./components/FilmReview/FilmReview";
 import React from "react";
+import './App.css'
 
 function App() {
   const router =createBrowserRouter([

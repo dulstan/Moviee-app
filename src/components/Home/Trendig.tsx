@@ -57,20 +57,27 @@ function TrendigMovies() {
       <h2>Trending Movies</h2>
       <div className="trending-movies">
         {trendingMovies.map((movie) => (
-          <div key={movie.title} className="movie-card">
+          <div key={movie.title} className="thumbnail-container">
             <Link to={`/filmreview/${movie.title}`} className="thumbnail-link">
-              <img src={movie.thumbnail} alt={movie.title} />
+              <img
+                className="thumbnail"
+                src={movie.thumbnail}
+                alt={movie.title}
+              />
             </Link>
+            <article className="movie-info">
+              <h3>{movie.title}</h3>
 
-            <h3>{movie.title}</h3>
-            <p>{movie.synopsis}</p>
-            <button onClick={() => toggleBookmark(movie)}>
-              {isBookmarked(movie) ? (
-                <FontAwesomeIcon icon={faStar} className="bookmarked" />
-              ) : (
-                <FontAwesomeIcon icon={faStarOutline} />
-              )}
-            </button>
+              <button onClick={() => toggleBookmark(movie)}>
+                {isBookmarked(movie) ? (
+                  <FontAwesomeIcon icon={faStar} className="bookmarked" />
+                ) : (
+                  <FontAwesomeIcon icon={faStarOutline} />
+                )}
+              </button>
+              <p>Year: {movie.year}</p>
+              <p>Rated: {movie.rating}</p>
+            </article>
           </div>
         ))}
       </div>

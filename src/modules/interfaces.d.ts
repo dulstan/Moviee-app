@@ -1,5 +1,5 @@
-export interface Movie{
-    title: string;
+export interface Movie {
+  title: string;
   year: number;
   rating: string;
   actors: string[];

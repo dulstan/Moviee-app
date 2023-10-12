@@ -1,39 +1,67 @@
+h2 {
+    color: white;
+    font-size: 40px;
+    padding: 20px;
+}
+
+p {
+    color: white;
+}
+
 .recommended-movies {
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    gap: 0px;
+
 }
-/* Lägg till pseudoelement för att skapa en scrollbar om det behövs */
+
 .recommended-movies::-webkit-scrollbar {
     width: 8px;
-    /* Justera scrollbarbredden efter dina önskemål */
+
 }
 
-.recommended-movies::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 4px;
+
+.thumbnail-container:hover {
+    transform: translateY(-5px);
+
 }
 
-.recommended-movies {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    /* Lägg till andra stilar efter behov */
+
+.thumbnail-link {
+    text-decoration: none;
+    display: block;
 }
-.movie-card {
-    flex: 0 0 auto;
+
+.thumbnail {
     width: 250px;
-    margin-right: 10px;
-    scroll-snap-align: start;
-    background-color: #fff;
-    /* Bakgrundsfärg för filmkortet */
-    border: 1px solid #ddd;
-    /* Kanteffekt för filmkortet */
-    border-radius: 5px;
-    /* Rundade hörn för filmkortet */
-    padding: 10px;
-    /* Inre utrymme för filmkortet */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Skugga för filmkortet */
-    /* Lägg till andra stilar efter behov */
+    height: 330px;
+    margin: -10px;
+}
+
+.thumbnail-container {
+    background-color: rgb(91, 91, 126);
+}
+
+
+.movie-info h3 {
+    margin-top: 20px;
+    min-height: 40px;
+    max-width: fit-content;
+}
+
+
+.movie-info button {
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: baseline;
+    color: white;
+}
+
+.movie-info .bookmarked {
+    color: #f0c929;
 }

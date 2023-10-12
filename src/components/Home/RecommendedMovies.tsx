@@ -5,6 +5,7 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 import React from "react";
 import { Movie } from '../../modules/interfaces';
+import { Link } from "react-router-dom";
 
 function RecommendedMovies() {
   const [recommendedMovies, setRecommendedMovies] = useState<Movie[]>([]);
@@ -54,14 +55,22 @@ function RecommendedMovies() {
   };
 
   const toggleBookmark = (movie: Movie) => {
-    if (isBookmarked(movie)){
-      const updatedBookmarks = bookmarkedMovies.filter((bm)=>bm.title !== movie.title); 
-      localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks));
+    if (isBookmarked(movie)) {
+      const updatedBookmarks = bookmarkedMovies.filter(
+        (bm) => bm.title !== movie.title
+      );
+      localStorage.setItem(
+        "bookmarkedMovies",
+        JSON.stringify(updatedBookmarks)
+      );
       setBookmarkedMovies(updatedBookmarks);
-    }else {
-      const updatedBookmarks=[...bookmarkedMovies, movie];
-      localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks)); 
-      setBookmarkedMovies(updatedBookmarks)
+    } else {
+      const updatedBookmarks = [...bookmarkedMovies, movie];
+      localStorage.setItem(
+        "bookmarkedMovies",
+        JSON.stringify(updatedBookmarks)
+      );
+      setBookmarkedMovies(updatedBookmarks);
     }
   };
 
@@ -70,10 +79,16 @@ function RecommendedMovies() {
       <h2>Recommended for You</h2>
       <div className="recommended-movies">
         {recommendedMovies.map((movie) => (
-          <div key={movie.title} className="movie-card">
-            <img src={movie.thumbnail} alt={movie.title} />
+          <div key={movie.title} className="thumbnail-container">
+            <Link to={`/filmreview/${movie.title}`} className="thumbnail-link">
+              <img
+                className="thumbnail"
+                src={movie.thumbnail}
+                alt={movie.title}
+              />
+            </Link>
+            <article className='movie-info'>
             <h3>{movie.title}</h3>
-            <p>{movie.synopsis}</p>
             <button onClick={() => toggleBookmark(movie)}>
               {isBookmarked(movie) ? (
                 <FontAwesomeIcon icon={faStar} className="bookmarked" />
@@ -81,6 +96,10 @@ function RecommendedMovies() {
                 <FontAwesomeIcon icon={faStarOutline} />
               )}
             </button>
+            <p>Year: {movie.year}</p>
+            <p>Rated: {movie.rating}</p>
+            </article>
+            
           </div>
         ))}
       </div>
