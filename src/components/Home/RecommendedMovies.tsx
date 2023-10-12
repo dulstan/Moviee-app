@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import './recommendedMovies.css'
+import './RecommendedMovies.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
