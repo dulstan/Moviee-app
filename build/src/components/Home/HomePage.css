@@ -1,0 +1,12 @@
+.search-results {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (min-width: 768px) {
+    .home-page {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
