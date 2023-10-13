@@ -1,13 +1,22 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import jsx from 'vite-plugin-jsx';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [jsx ()],
   test:{
     globals:true,
     environment: 'jsdom',
     setupFiles: './src/tests/setupTest.js'
   }, 
-  base: '/'
+  base: '/', 
+  server: {
+    proxy: {
+      '/assets': {
+        target: '/assets',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/assets/, ''),
+      },
+    },
+  },
 })
