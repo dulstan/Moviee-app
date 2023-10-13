@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { Movie } from "../../modules/interfaces";
 import "./BookMark.css";
+import Header from "../../views/header";
 function BookmarkedMovies() {
   const [bookmarkedMovies, setBookmarkedMovies] = useState<Movie[]>([]);
 
@@ -23,7 +24,10 @@ function BookmarkedMovies() {
   };
 
   return (
+    
     <div className="bookmark-container">
+      
+
       <h2>Bookmarked Movies</h2>
       <div className="bookmarked-movies">
         {bookmarkedMovies.map((movie) => (
