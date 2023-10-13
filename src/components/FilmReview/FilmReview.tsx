@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import '../../../movies.json'
+
 import React from "react";
 import { Movie } from '../../modules/interfaces';
 import './FilmReview.css'
+import allMovies from "../../../movies.json";
 
 function FilmReview() {
     const { movieTitle } = useParams<{ movieTitle: string }>();
@@ -13,19 +14,26 @@ function FilmReview() {
     useEffect(() => {
         const storedBookmarkedMovies = JSON.parse(localStorage.getItem('bookmarkedMovies') || '[]');
         setBookmarkedMovies(storedBookmarkedMovies);
-
-        fetch("../../../movies.json")
-          .then((response) => response.json())
-          .then((data) => {
-
-            const foundMovie = data.find((m: Movie) => m.title === movieTitle);
+        
+        const foundMovie = allMovies.find((m: Movie) => m.title === movieTitle);
             if (foundMovie) {
               setMovie(foundMovie);
             } else {
               console.error(`Movie not found: ${movieTitle}`);
             }
-          })
-          .catch((error) => console.error('Error fetching data:', error));
+
+        // fetch("../../../movies.json")
+        //   .then((response) => response.json())
+        //   .then((data) => {
+
+        //     const foundMovie = data.find((m: Movie) => m.title === movieTitle);
+        //     if (foundMovie) {
+        //       setMovie(foundMovie);
+        //     } else {
+        //       console.error(`Movie not found: ${movieTitle}`);
+        //     }
+        //   })
+        //   .catch((error) => console.error('Error fetching data:', error));
       }, [movieTitle]);
       if (!movie) {
         
