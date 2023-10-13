@@ -7,6 +7,7 @@ import React from "react";
 import { Movie } from '../../modules/interfaces';
 import { Link } from "react-router-dom";
 import '../../../movies.json';
+import allMovies from "../../../movies.json";
 
 
 function RecommendedMovies() {
@@ -15,18 +16,23 @@ function RecommendedMovies() {
 
   useEffect(() => {
     // Hämta alla filmer från JSON-filen
-    fetch('movies.json')
-      .then((response) => response.json())
-      .then((data) => {
-        // Hämta trending-filmer från JSON-filen
-        const trending = data.filter((movie: Movie) => movie.isTrending);
+    // fetch('movies.json')
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // Hämta trending-filmer från JSON-filen
+    //     const trending = data.filter((movie: Movie) => movie.isTrending);
 
-        // Slumpa fram rekommenderade filmer (4-10 filmer)
-        const recommended = getRandomRecommendedMovies(data, trending, Math.floor(Math.random() * 7) + 4);
+    //     // Slumpa fram rekommenderade filmer (4-10 filmer)
+    //     const recommended = getRandomRecommendedMovies(data, trending, Math.floor(Math.random() * 7) + 4);
 
-        setRecommendedMovies(recommended);
-      })
-      .catch((error) => console.error('Error fetching data:', error));
+    //     setRecommendedMovies(recommended);
+    //   })
+    //   .catch((error) => console.error('Error fetching data:', error));
+
+    const trending = allMovies.filter((movie: Movie) => movie.isTrending);
+    const recommended = getRandomRecommendedMovies(allMovies, trending, Math.floor(Math.random() * 7) + 4);
+
+      setRecommendedMovies(recommended);
       const storedBookmarkedMovies=JSON.parse(localStorage.getItem('bookmarkedMovies')|| '[]');
         setBookmarkedMovies(storedBookmarkedMovies);
   }, []);
