@@ -8,6 +8,7 @@ import { Movie } from '../../modules/interfaces';
 import { Link } from "react-router-dom";
 import '../../../movies.json';
 
+
 function RecommendedMovies() {
   const [recommendedMovies, setRecommendedMovies] = useState<Movie[]>([]);
   const [bookmarkedMovies, setBookmarkedMovies] = useState<Movie[]>([]);

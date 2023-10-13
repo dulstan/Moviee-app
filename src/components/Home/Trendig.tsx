@@ -6,7 +6,8 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import React from "react";
-import '../../../movies.json'
+import allMovies from "../../../movies.json";
+
 
 function TrendigMovies() {
   const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
@@ -14,15 +15,18 @@ function TrendigMovies() {
 
   useEffect(() => {
     // Hämta trending-filmer från JSON-filen
-    fetch("movies.json")
-      .then((response) => response.json())
-      .then((data) => {
-        // Filtrera ut trending-filmer
-        const trending = data.filter((movie: Movie) => movie.isTrending);
-        setTrendingMovies(trending);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
-
+      // fetch(allMovies)
+      // .then((response) => response.json())
+      // .then((data) => {
+      //   // Filtrera ut trending-filmer
+      //   const trending = data.filter((movie: Movie) => movie.isTrending);
+      //   setTrendingMovies(trending);
+      // })
+      
+      // .catch((error) => console.error("Error fetching data:", error));
+      const trending = allMovies.filter((movie: Movie) => movie.isTrending);
+         setTrendingMovies(trending);
+         console.log(trendingMovies); 
     const storedBookmarkedMovies = JSON.parse(
       localStorage.getItem("bookmarkedMovies") || "[]"
     );
