@@ -10,13 +10,20 @@ img {
 }
 
 .movie-card {
-  flex: 0 0 calc(20% - 20px);
+  flex: 0 0 calc(20% - 10px);
   margin: 10px;
   border: 1px solid #ddd;
   padding: 10px;
   border-radius: 5px;
-  box-sizing: border-box;
-
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+}
+.movie-card h2{
+  padding: 0;
+  font-size: 15px;
+  min-height: 30px;
 }
 
 .genre-movie h1 {
@@ -25,4 +32,11 @@ img {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .genre-movie h1 {
+    font-size: 25px;
+  }
+  
 }

@@ -31,7 +31,7 @@ function BookmarkedMovies() {
       <h2>Bookmarked Movies</h2>
       <div className="bookmarked-movies">
         {bookmarkedMovies.map((movie) => (
-          <div key={movie.title} className="movie-card">
+          <div key={movie.title} className="bookMark-movie-card">
             <img src={movie.thumbnail} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{movie.synopsis}</p>

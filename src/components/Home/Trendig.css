@@ -56,3 +56,10 @@ p{
     color: #f0c929;
 }
 
+
+@media (max-width: 768px) {
+     h2 {
+     font-size: 25px;
+    } 
+    
+}

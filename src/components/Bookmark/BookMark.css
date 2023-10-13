@@ -5,25 +5,52 @@
 .bookmarked-movies {
     display: flex;
     justify-content: center;
-
 }
 
-.movie-card {
+.bookMark-movie-card {
     background-color: rgb(91, 91, 126, 0.3);
+    flex: 0 0 calc(20% - 10px);
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
-.movie-card h3 {
+.bookMark-movie-card h3 {
     margin-top: 20px;
-    min-height: 40px;
+    min-height: 50px;
 }
 
-.movie-card p {
-    min-height: 120px;
+.bookMark-movie-card p {
+    min-height: 130px;
 }
 
-.movie-card button {
+.bookMark-movie-card img {
+    display: flex;
+}
+
+.bookMark-movie-card button {
     padding: 10px;
     border-radius: 5px;
     color: white;
     background-color: rgba(79, 49, 197, 0.6);
 }
+
+@media (max-width: 768px) {
+    .bookmark-container h2 {
+     font-size: 25px;
+    }
+    .bookmarked-movies{
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+    }
+    
+}
+/* display: flex;
+overflow-x: scroll;
+scroll-snap-type: x mandatory; */
