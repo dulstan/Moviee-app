@@ -6,7 +6,7 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarOutline } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import React from "react";
-import '../../../movies.json';
+import 'movies.json'
 
 function TrendigMovies() {
   const [trendingMovies, setTrendingMovies] = useState<Movie[]>([]);
